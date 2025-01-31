@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useUser } from "@clerk/clerk-react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { Paper, Modal, RadioGroup, FormControlLabel, Radio, Button, Select, MenuItem } from "@mui/material";
-import { FaChevronLeft, FaChevronRight, FaDownload } from "react-icons/fa";
+import { Paper, Modal, RadioGroup, FormControlLabel, Radio, Select, MenuItem } from "@mui/material";
+import { FaDownload } from "react-icons/fa";
 import toast from "react-hot-toast";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
@@ -240,7 +240,7 @@ function SalesHistory({ refreshTrigger }) {
                 onClick={handlePrevious}
                 disabled={currentPage === 1}
               >
-                <FaChevronLeft className="mr-1" /> Previous
+                &lt; Previous
               </button>
 
               {visiblePages.map((page) => (
@@ -267,7 +267,7 @@ function SalesHistory({ refreshTrigger }) {
                 onClick={handleNext}
                 disabled={currentPage === totalPages}
               >
-                Next <FaChevronRight className="ml-1" />
+                Next &gt;
               </button>
             </nav>
 
