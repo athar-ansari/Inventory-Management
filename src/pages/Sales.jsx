@@ -57,7 +57,8 @@ function Sales() {
 
     setIsSubmitting(true);
     try {
-      await axios.post("http://localhost:8000/sales", {
+      const api = import.meta.env.VITE_API_URL;
+      await axios.post(`${api}/sales`, {
         productId: selectedProduct._id,
         quantity,
         price,
